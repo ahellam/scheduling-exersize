@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import "./App.css";
 import Schedule from "./Schedule";
-import Weekdays from "./Weekdays";
+
 
 function App() {
   const shiftURL = "http://localhost:3000/employees"
