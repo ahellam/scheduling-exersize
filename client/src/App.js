@@ -46,7 +46,7 @@ function App() {
         </label>
       </div>
 
-      <div className="grid grid-cols-9 grid-rows-1 grid-flow-col text-center bg-gray-300">
+      <div className="font-bold grid grid-cols-9 grid-rows-1 grid-flow-col text-center bg-gray-300 border-[1.5px] border-black m-[1px]">
 {/* SUN */}
         <div className="col-start-3">
           {`Sun (${dayHrs(0)} hrs)`} 
