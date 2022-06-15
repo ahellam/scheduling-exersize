@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-// import { useTable } from "react-table";
-
 import "./App.css";
 import Schedule from "./Schedule";
 
@@ -19,7 +17,17 @@ function App() {
   },[firstOrLast])
 
 
-  // const sunFilter = shifts.map((sh) => sh.shifts.filter(s => s.day === 0)).filter(s => s.length >= 1)
+
+  // console.log(
+  //   shifts
+  //   // .map((sh) => sh.shifts)
+  //   // .filter(s => s.day === 0)
+  //   // .filter(s => s.length >= 1).flat()
+  //   // .map(s => s.duration)
+  //   // .reduce((prevVal, currVal) => prevVal + currVal, 0)
+  //   )
+    
+    // function that calculates total hours per day based on the day
   function dayHrs(day) {
     const hrs = shifts.map((sh) => sh.shifts.filter(s => s.day === day))
     .filter(s => s.length >= 1).flat()
@@ -75,16 +83,13 @@ function App() {
         <div className="col-start-9">
         {`Sat (${dayHrs(6)} hrs)`} 
         </div>
-      
-
-
       </div>
 
-      {/* <div className="SCHED-CONTAINER grid grid-cols-9 grid-rows-6 grid-flow-col m-1"> */}
+
         {shifts.map(shift => (
           <Schedule key={shift.id} shift={shift} shifts={shifts} />
         ))}
-      {/* </div> */}
+
     </div>
   );
 }
