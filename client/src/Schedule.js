@@ -16,23 +16,17 @@ function Schedule({shift}) {
   const saturdayFilter = shift.shifts.filter(s => s.day === 6)
 
   function roleColor(dayFilter) {
-    if (dayFilter[0].role === 'Server')
-      return 'text-red-600'
-    if (dayFilter[0].role === 'Chef')
-      return 'text-yellow-600'
-    if (dayFilter[0].role === 'Host')
+    if (dayFilter[0].color === 'red')
+      return 'text-red-700'
+    if (dayFilter[0].color === 'orange')
+      return 'text-orange-500'
+    if (dayFilter[0].color === 'green')
       return 'text-green-600'
     else 
-      return 'text-purple-600'
+      return 'text-purple-700'
   }
-  // ${sundayFilter[0].role === 'Server' ? 'text-red-600' : ''}
 
-  // const mappedSunday = sundayFilter.map(s => s.duration)
-  // const emptyArr = []
-  // const reducedMappedSun = mappedSunday.reduce(function (s, v) { return s + (v || 0); }, 0)
 
-  // console.log(sundayFilter[0].color)
-  
   return (
 
     <div className="font-bold grid grid-cols-9 grid-rows-5 grid-flow-col text-center border-[1.5px] border-black m-[1px]">
