@@ -24,7 +24,7 @@ RSpec.describe :EmployeesController do
       expect(response).to have_http_status(:success)
     end
 
-    # This also tests that the :name attribute method in employee serializer works
+    # This also tests that the :name attribute method in employee serializer works converting first_name & last_name to name
     it "returns names in correct order" do 
       expect(JSON.parse(response.body).first['name']).to eq("Andy Zamburg")
     end

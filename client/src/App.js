@@ -16,8 +16,6 @@ function App() {
     .then(setShifts)
   },[firstOrLast])
 
-
-
   // console.log(
   //   shifts
   //   // .map((sh) => sh.shifts)

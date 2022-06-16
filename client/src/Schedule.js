@@ -11,23 +11,25 @@ function Schedule({shift}) {
   const thursdayFilter = daySelector(4)
   const fridayFilter = daySelector(5)
   const saturdayFilter = daySelector(6)
-  // console.log('sunday shifts:', sundayFilter)
+  // console.log('sunday shifts:', sundayFilter[0])
 
   // checks the color value of the shift and sets css accordingly
   function roleColor(dayFilter) {
-    if (dayFilter[0].color === 'red')
+    const shiftColor = dayFilter[0].color
+    if (shiftColor === 'red')
       return 'text-red-700'
-    if (dayFilter[0].color === 'orange')
+    if (shiftColor === 'orange')
       return 'text-orange-500'
-    if (dayFilter[0].color === 'green')
+    if (shiftColor === 'green')
       return 'text-green-600'
     else 
       return 'text-purple-700'
   }
+  // sundayFilter[0] && console.log(roleColor(sundayFilter))
 
   return (
-
     <div className="font-bold grid grid-cols-9 grid-rows-5 grid-flow-col text-center border-[1.5px] border-black m-[1px]">
+
 {/* NAMES */}
       <div className="col-start-1 row-start-3">
         {shift.name}

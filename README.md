@@ -24,7 +24,7 @@ Acceptance Criteria:
 - Build a simple Ruby-based server that exposes an endpoint to fetch shifts. Feel free to use any Ruby server, but [Sinatra](https://github.com/sinatra/sinatra) is probably the easiest/most lightweight
   - Endpoint: `GET /shifts`
   - It accepts one string parameter, `sort_by`, which will either be `first_name` or `last_name`
-  - It returns this [JSON payload](./593c53ab9255a0934dbdf8e6f079e046#file-shifts-json), sorted by first name or by last name 
+  - It returns this [JSON payload](https://gist.githubusercontent.com/jordanfbrown/593c53ab9255a0934dbdf8e6f079e046/raw/823e34a3a702a9b6cc73f0d74e5ac4cf15f89a7b/shifts.json), sorted by first name or by last name 
 - Using the JSON data returned by the server, build a schedule that looks like the mock below
 - Each row shows a different employee
 - Each column shows a different day of the week
