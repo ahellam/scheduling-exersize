@@ -2,19 +2,18 @@ import React from 'react'
 
 function Schedule({shift}) {
 
-  // const daysToWords = (dayNum) => {
-  //   const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-  //   return days[dayNum] 
-  // }
+  const daySelector = (num) => shift.shifts.filter(s => s.day === num)
+  // defining filter functions for each day
+  const sundayFilter = daySelector(0)
+  const mondayFilter = daySelector(1)
+  const tuesdayFilter = daySelector(2)
+  const wednesdayFilter = daySelector(3)
+  const thursdayFilter = daySelector(4)
+  const fridayFilter = daySelector(5)
+  const saturdayFilter = daySelector(6)
+  // console.log('sunday shifts:', sundayFilter)
 
-  const sundayFilter = shift.shifts.filter(s => s.day === 0)
-  const mondayFilter = shift.shifts.filter(s => s.day === 1)
-  const tuesdayFilter = shift.shifts.filter(s => s.day === 2)
-  const wednesdayFilter = shift.shifts.filter(s => s.day === 3)
-  const thursdayFilter = shift.shifts.filter(s => s.day === 4)
-  const fridayFilter = shift.shifts.filter(s => s.day === 5)
-  const saturdayFilter = shift.shifts.filter(s => s.day === 6)
-
+  // checks the color value of the shift and sets css accordingly
   function roleColor(dayFilter) {
     if (dayFilter[0].color === 'red')
       return 'text-red-700'
@@ -25,7 +24,6 @@ function Schedule({shift}) {
     else 
       return 'text-purple-700'
   }
-
 
   return (
 
@@ -42,6 +40,7 @@ function Schedule({shift}) {
         }
       </div>
 
+{/* HOURS & ROLES */}
 {/* SUNDAY */}
       { sundayFilter[0] && <div className={`col-start-3 row-start-2 ${roleColor(sundayFilter)}`}>
         { sundayFilter[0].start_at } - { sundayFilter[0].end_at }
